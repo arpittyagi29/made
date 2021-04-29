@@ -69,11 +69,11 @@ submitValue=(event)=>{
            <br/> <br/>
     </Form>
     {type1==="Contrary"?
-    <Card1 type1={type1} answer1={answer1}  question1={question1} color1="Blue"/>:''}
+    <Card1 type1={type1} answer1={answer1}  question1={question1} color1="Blue" font="monospace"/>:''}
     {type1==="Affirmative"?
-    <Card1 type1={type1} answer1={answer1}  question1={question1} color1="green"/>:''}
+    <Card1 type1={type1} answer1={answer1}  question1={question1} color1="green" font="cursive"/>:''}
     {type1==="Neutral"?
-    <Card1 type1={type1} answer1={answer1}  question1={question1} color1="Purple"/>:''}
+    <Card1 type1={type1} answer1={answer1}  question1={question1} color1="Purple" font="bold"/>:''}
     </div>
         )
     }

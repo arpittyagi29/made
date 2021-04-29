@@ -1,14 +1,12 @@
 import React, { Component } from 'react'
 import 'antd/dist/antd.css';
 import { Card } from 'antd';
-import './Card1.css';
-// let [varsad,sadas]= s
 class Card1 extends Component {
     render() {
-        const {type1,question1,answer1,color1} = this.props
+        const {type1,question1,answer1,color1,font} = this.props
         return (
             <div>
-                <Card style={{ width: 300 ,marginLeft:'475px',fontSize:'25px',backgroundColor:`${color1}` }}>
+                <Card style={{ width: 300 ,marginLeft:'475px',fontSize:'25px',backgroundColor:`${color1}` ,fontFamily:`${font}`}}>
     <div>
                        <div>
                          <h5>{type1}</h5>
