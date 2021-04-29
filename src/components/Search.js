@@ -65,7 +65,7 @@ submitValue=(event)=>{
       <Input prefix={<UserOutlined className="site-form-item-icon"/>} value={username} placeholder="Question Here" onChange={this.changeValue}/>
   </Form.Item>
 <br/>
-<Button type="primary" htmlType="submit"  style={{marginLeft:'2px'}}>Click Me</Button>
+<Button type="primary" htmlType="submit"  style={{marginLeft:'-10px'}}>Click Me</Button>
            <br/> <br/>
     </Form>
     {type1==="Contrary"?
