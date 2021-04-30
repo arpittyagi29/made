@@ -15,21 +15,15 @@ function Search1() {
     const [question,setQuestion]=useState("");
     const [loading,setLoading]=useState(true);
 
-const submitValue=(event)=>{
-        console.log("ValueSubmit")
+const submitValue=()=>{
      axios.get(`https://8ball.delegator.com/magic/JSON/${username}`)
      .then(response =>{
         console.log(response.data)
         var  metrices = response.data.magic
-        //   loading :false,
-        //   type1:metrices.type,
-        //   question1:metrices.question,
-        //   answer1:metrices.answer,
         setType(metrices.type)
         setAnswer(metrices.answer);
         setQuestion(metrices.question);
         setLoading(false);
-        console.log(type)
     })
     .catch(error => {
                 alert('Invalid Inputs')
