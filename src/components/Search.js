@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import { Typography } from 'antd';
-import ReactDOM from 'react-dom';
-import { Form, Input, Button, Checkbox } from 'antd';
+import { Form, Input, Button} from 'antd';
 import { UserOutlined} from '@ant-design/icons';
-import Card1 from './Card1'
+import Card2 from './Card2'
 
 const { Title } = Typography;
 // var Loader = require('react-loader');
@@ -13,7 +12,7 @@ export class Search extends Component {
         super(props)
         this.state = {
             username:'',
-            loaded : true,
+            loading :true,
             type1:'',
             question1:'',
             answer1:'',
@@ -35,7 +34,7 @@ submitValue=(event)=>{
         console.log(response.data)
         var  metrices = response.data.magic
         this.setState({
-          loaded :false,
+          loading :false,
           type1:metrices.type,
           question1:metrices.question,
           answer1:metrices.answer,
@@ -45,7 +44,7 @@ submitValue=(event)=>{
     .catch(error => {
                 alert('Invalid Inputs')
                 this.setState({
-                    loaded:true
+                    loading:true
                 })
             })
       }
@@ -55,7 +54,7 @@ submitValue=(event)=>{
    
     
     render() {
-        const {username,loaded,type1,question1,answer1} = this.state;
+        const {username,loading,type1,question1,answer1} = this.state;
         return (
             <div className="Heading">
             <Title >Enter Question</Title>
@@ -69,11 +68,11 @@ submitValue=(event)=>{
            <br/> <br/>
     </Form>
     {type1==="Contrary"?
-    <Card1 type1={type1} answer1={answer1}  question1={question1} color1="Blue" font="monospace"/>:''}
+    <Card2 type1={type1} answer1={answer1}  question1={question1} color1="Blue" font="monospace" loading={loading}/>:''}
     {type1==="Affirmative"?
-    <Card1 type1={type1} answer1={answer1}  question1={question1} color1="green" font="cursive"/>:''}
+    <Card2 type1={type1} answer1={answer1}  question1={question1} color1="green" font="cursive" loading={loading}/>:''}
     {type1==="Neutral"?
-    <Card1 type1={type1} answer1={answer1}  question1={question1} color1="Purple" font="bold"/>:''}
+    <Card2 type1={type1} answer1={answer1}  question1={question1} color1="Purple" font="bold" loading={loading}/>:''}
     </div>
         )
     }
